@@ -108,9 +108,8 @@ const Events = () => {
               return (
                 <div
                   key={idx}
-                  className={`flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 ${
-                    isHovered ? "scale-110 z-10 shadow-2xl" : "scale-100"
-                  }`}
+                  className={`flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 ${isHovered ? "scale-110 z-10 shadow-2xl" : "scale-100"
+                    }`}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   onTouchStart={() => setHoveredIndex(idx)}   // 👈 mobile zoom effect
@@ -120,14 +119,12 @@ const Events = () => {
                     <img
                       src={image}
                       alt={`Event ${actualIdx + 1}`}
-                      className={`w-full h-full object-cover transition-transform duration-700 ${
-                        isHovered ? "scale-110" : "scale-100"
-                      }`}
+                      className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? "scale-110" : "scale-100"
+                        }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 transition-opacity duration-500 ${
-                        isHovered ? "opacity-100" : "opacity-0"
-                      }`}
+                      className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
+                        }`}
                     >
                       <span className="text-white text-sm font-medium">
                         Tap to view more
@@ -166,9 +163,7 @@ const Events = () => {
             })}
           </div>
 
-          {/* Gradient fades on sides */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none"></div>
+
         </div>
 
         {/* Navigation controls */}

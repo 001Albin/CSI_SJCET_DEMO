@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import Navbar from './Navbar'
-import headerImg from '../assets/Sjc113-1.jpg'
-import { Eye, Target } from 'lucide-react'
+import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
+import headerImg from '../assets/Sjc113-1.webp';
+import { Eye, Target } from 'lucide-react';
 
 const Header = () => {
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), 500)
-    return () => clearTimeout(timer)
-  }, [])
+    const timer = setTimeout(() => setIsLoaded(true), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div
@@ -24,7 +24,7 @@ const Header = () => {
       <Navbar />
 
       {/* Main Content */}
-      <div className="relative flex-1 flex flex-col justify-start items-center px-6 pt-20 pb-20">
+      <div className="relative flex-1 flex flex-col justify-start items-center px-4 sm:px-6 pt-10 pb-20">
         {/* Hero Section */}
         <div className="text-center text-white mb-20">
           <div
@@ -55,8 +55,8 @@ const Header = () => {
         </div>
 
         {/* Vision & Mission Cards */}
-        <div className="w-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-25">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Vision Card */}
             <div
               className={`h-full transform transition-all duration-1000 ease-out ${
@@ -107,7 +107,7 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
