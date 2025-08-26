@@ -1,9 +1,0 @@
-[build]
-  base = "csi_sjcet"
-  command = "npm run build"
-  publish = "csi_sjcet/dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
