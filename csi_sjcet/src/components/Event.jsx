@@ -71,7 +71,7 @@ const Events = () => {
 
   return (
     <div
-      className="relative bg-gradient-to-b from-gray-50 to-white py-16 overflow-hidden"
+      className="relative bg-gradient-to-b from-gray-50 to-white py-20 overflow-hidden"
       id="Event"
     >
       {/* Decorative elements */}
@@ -108,14 +108,14 @@ const Events = () => {
               return (
                 <div
                   key={idx}
-                  className={`flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 ${isHovered ? "scale-110 z-10 shadow-2xl" : "scale-100"
+                  className={`flex-shrink-0 w-72 h-80 flex flex-col bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 ${isHovered ? "scale-110 z-10 shadow-2xl" : "scale-100"
                     }`}
                   onMouseEnter={() => setHoveredIndex(idx)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  onTouchStart={() => setHoveredIndex(idx)}   // 👈 mobile zoom effect
-                  onTouchEnd={() => setHoveredIndex(null)}    // 👈 reset zoom on release
+                  onTouchStart={() => setHoveredIndex(idx)}
+                  onTouchEnd={() => setHoveredIndex(null)}
                 >
-                  <div className="relative h-3/5 overflow-hidden">
+                  <div className="relative h-44 flex-shrink-0 overflow-hidden">
                     <img
                       src={image}
                       alt={`Event ${actualIdx + 1}`}
@@ -123,7 +123,7 @@ const Events = () => {
                         }`}
                     />
                     <div
-                      className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
+                      className={`absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4 transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"
                         }`}
                     >
                       <span className="text-white text-sm font-medium">
@@ -131,16 +131,14 @@ const Events = () => {
                       </span>
                     </div>
                   </div>
-                  <div className="p-6 h-2/5 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {eventTitles[actualIdx]}
-                      </h3>
-                      <p className="text-gray-600 text-sm line-clamp-2">
-                        {eventDescriptions[actualIdx]}
-                      </p>
-                    </div>
-                    <button className="mt-4 text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors flex items-center">
+                  <div className="p-4 flex flex-col flex-1">
+                    <h3 className="text-base font-bold text-gray-900 leading-tight">
+                      {eventTitles[actualIdx]}
+                    </h3>
+                    <p className="text-gray-500 text-sm mt-1 line-clamp-2">
+                      {eventDescriptions[actualIdx]}
+                    </p>
+                    <button className="mt-auto text-blue-600 font-medium text-sm hover:text-blue-700 transition-colors flex items-center">
                       View details
                       <svg
                         xmlns="http://www.w3.org/2000/svg"

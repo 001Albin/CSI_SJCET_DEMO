@@ -1,4 +1,32 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cookie&family=Jost&family=Mogra&family=Monoton&family=Outfit:wght@100..900&family=Permanent+Marker&family=Rubik+80s+Fade&display=swap');
 @import "tailwindcss";
 
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:#07070b;color:#fff;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes pulseDot{0%,100%{opacity:1;}50%{opacity:.25;}}
+@keyframes floatGlow{0%,100%{transform:translateX(-50%) translate(0,0);}50%{transform:translateX(-50%) translate(26px,-24px);}}
+@keyframes overlayIn{from{opacity:0;}to{opacity:1;}}
+@keyframes modalIn{from{opacity:0;transform:translateY(18px) scale(.97);}to{opacity:1;transform:none;}}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+.marquee{animation:marquee 45s linear infinite;}
+.marquee:hover{animation-play-state:paused;}
+.marquee-rev{animation:marquee 56s linear infinite reverse;}
+.marquee-rev:hover{animation-play-state:paused;}
+.pulse-dot{animation:pulseDot 2s ease-in-out infinite;}
+.float-glow{animation:floatGlow 14s ease-in-out infinite;}
+.bob{animation:bob 2.4s ease-in-out infinite;}
+.cursor-blink{animation:blink 1s step-end infinite;}
+.overlay-in{animation:overlayIn .25s ease;}
+.modal-in{animation:modalIn .35s cubic-bezier(.2,.7,.3,1);}
+
+::-webkit-scrollbar{width:10px;height:0;}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:8px;}
+
+@media(max-width:640px){
+  .event-modal-grid{grid-template-columns:1fr!important;}
+  .event-modal-img{min-height:220px!important;max-height:260px;}
+}
